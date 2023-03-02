@@ -992,7 +992,7 @@ public class Configuration {
     if (rm.hasNestedResultMaps()) {
       for (Map.Entry<String, ResultMap> entry : resultMaps.entrySet()) {
         Object value = entry.getValue();
-        if (value != null) {
+        if (value instanceof ResultMap) {
           ResultMap entryResultMap = (ResultMap) value;
           if (!entryResultMap.hasNestedResultMaps() && entryResultMap.getDiscriminator() != null) {
             Collection<String> discriminatedResultMapNames = entryResultMap.getDiscriminator().getDiscriminatorMap()
